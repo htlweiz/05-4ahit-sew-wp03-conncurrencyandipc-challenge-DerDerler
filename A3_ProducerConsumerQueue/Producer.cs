@@ -12,7 +12,7 @@ public class Producer
     private volatile bool shouldStop = false;
     private Thread? producerThread;
 
-    public Producer( int id)
+    public Producer(int id)
     {
         this.producerId = id;
         this.random = new Random(id * 1000); // Verschiedene Seeds für verschiedene Producer
@@ -27,7 +27,6 @@ public class Producer
         while (!shouldStop)
         {
             int number = random.Next(1, 101); // Zufällige Zahl zwischen 1 und 100
-           
             Thread.Sleep(1000); // 1 Sekunde Takt
         }
     }
